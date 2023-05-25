@@ -1,7 +1,6 @@
 import * as dotenv from "dotenv";
 dotenv.config();
 import express from "express";
-import morgan from "morgan";
 import mongoose from "mongoose";
 
 import errorHandler from "./middleware/globalErrorHandler.js";
@@ -49,7 +48,6 @@ const shouldCompress = (req, res) => {
 
 //middleware
 
-app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //compress responses that allowed by shouldCompress function
